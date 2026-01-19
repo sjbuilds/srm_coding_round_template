@@ -67,17 +67,24 @@ def find_overloaded_users(events):
         set()
     """
     # TODO: Implement your solution here
-    
+    track = {}
     ans = set()
-    a = user_id.count()
-    k=0
-    j=0
-    while(i<a):
-        for(r=user_id(k))
-            if(user_id(i)=r):
-                j += 1
-            if(j>2):
-                ans.append(user_id)
+    for user_id, timestamp in events:
+        if user_id not in track:
+            track[user_id] = []
+        track[user_id].append(timestamp)
+    
+    for user_id in track:
+        timestamp = track[user_id]
+        timestamp.sort()
+        n=len(timestamp)
+        left=0
+        for right in range(n):
+            while timestamp[right] - timestamp[left] >= 10:
+                left+=1
+            if right - left + 1 >= 3:
+                ans.add(user_id)
+                break
 
     return ans
 
