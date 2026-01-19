@@ -52,11 +52,23 @@ def first_stable_character(s):
         None
     """
     # TODO: Implement your solution here
-    n = s.len()
+    n = len(s)
+    i=0
+    done=set()
     while(i < n):
-        if(s(i) = s(i+1)):
-          return i
-          break
+      j=i
+      while j<n and s[j]==s[i]:
+        j+=1
+        if(j-i) <= 2:
+          if s[i] not in done and s[i] not in s[j:]:
+            return s[i]
+
+        done.add(s[i])
+        i=j
+    if not s or len(s) < 2:
+      return None
+
+    return None
 
 
 if __name__ == "__main__":
