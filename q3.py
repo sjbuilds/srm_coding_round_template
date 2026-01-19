@@ -67,7 +67,19 @@ def find_overloaded_users(events):
         set()
     """
     # TODO: Implement your solution here
-    pass
+    
+    ans = set()
+    a = user_id.count()
+    k=0
+    j=0
+    while(i<a):
+        for(r=user_id(k))
+            if(user_id(i)=r):
+                j += 1
+            if(j>2):
+                ans.append(user_id)
+
+    return ans
 
 
 if __name__ == "__main__":
